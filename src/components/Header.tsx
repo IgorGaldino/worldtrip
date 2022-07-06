@@ -8,7 +8,7 @@ export function Header () {
       align="center"
     >
       <Image
-        src="/logo.svg"
+        src="/imgs/logo.svg"
         alt="logo"
         w="150px"
         h="100px"

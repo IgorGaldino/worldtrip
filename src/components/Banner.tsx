@@ -3,7 +3,11 @@ import React from 'react'
 
 export function Banner() {
   return (
-    <HStack bgImage="/background.svg" justify="space-evenly">
+    <HStack
+      bgImage="/imgs/background.svg"
+      justify="space-evenly"
+      w="100%"
+    >
       <Flex
         direction="column"
         color="light"
@@ -26,7 +30,7 @@ export function Banner() {
       </Flex>
       <Box position="relative" top="10">
         <Image
-          src="airplane.svg"
+          src="/imgs/airplane.svg"
           alt="airplane"
           w="400px"
         />
