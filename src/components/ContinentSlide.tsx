@@ -1,17 +1,18 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
+import { useRouter } from "next/router";
+
+import { Box, Text } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// import required modules
 import { Navigation, Pagination, A11y } from "swiper";
-import { Box, Text } from "@chakra-ui/react";
 
 export function ContinentSlide() {
+  const router = useRouter();
+
   const continents = [
     {
       name: "América do Norte",
@@ -55,26 +56,32 @@ export function ContinentSlide() {
     color: "white",
     fontWeight: "bold",
     fontSize: "20px",
+    cursor: "pointer",
     px: 4,
     background: `url(${img}) center/cover no-repeat`,
   });
+
+  const sendContinent = (continent: string, img: string) => {
+    const nameImg = img.split("/").at(-1);
+    router.push(`/${continent}?img=${nameImg}`);
+  }
+
   return (
-    <>
-      {/* <Swiper
-        navigation={true}
-        pagination={true}
-        modules={[Navigation, Pagination, A11y]}
-      > */}
-      <Swiper pagination={true} modules={[Pagination]}>
-        {continents.map((continent) => (
-          <SwiperSlide key={continent.name}>
-            <Box sx={boxParams(continent.img)}>
-              <Text fontSize="36">{continent.name}</Text>
-            </Box>
-            {/* <Image src={continent.img} alt={continent.alt} /> */}
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+    <Swiper
+      navigation={true}
+      pagination={true}
+      modules={[Navigation, Pagination, A11y]}
+    >
+      {continents.map((continent) => (
+        <SwiperSlide key={continent.name}>
+          <Box
+            sx={boxParams(continent.img)}
+            onClick={() => sendContinent(continent.name, continent.img)}
+          >
+            <Text fontSize="36">{continent.name}</Text>
+          </Box>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
