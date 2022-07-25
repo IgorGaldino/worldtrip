@@ -3,14 +3,18 @@ import { Flex, Text, Tooltip } from "@chakra-ui/react";
 
 export function ContinentInfo() {
   return (
-    <Flex w="100%" justify="space-between">
-      <Text w="600px" fontSize="xl" textAlign="justify">
+    <Flex
+      w="100%"
+      justify="space-between"
+      flexWrap="wrap"
+    >
+      <Text w="600px" fontSize={["sm", "lg", "xl"]} textAlign="justify">
         A Europa é, por convenção, um dos seis continentes do mundo.
         Compreendendo a península ocidental da Eurásia, a Europa geralmente
         divide-se da Ásia a leste pela divisória de águas dos montes Urais, o
         rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
       </Text>
-      <Flex gap="5" fontSize="lg">
+      <Flex gap="5" fontSize="lg" my="5">
         <Flex direction="column" justify="center" align="center">
           <Text color="highlight" fontWeight="semibold" fontSize="4xl">
             50

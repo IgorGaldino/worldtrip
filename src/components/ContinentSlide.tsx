@@ -61,9 +61,8 @@ export function ContinentSlide() {
     background: `url(${img}) center/cover no-repeat`,
   });
 
-  const sendContinent = (continent: string, img: string) => {
-    const nameImg = img.split("/").at(-1);
-    router.push(`/${continent}?img=${nameImg}`);
+  const sendContinent = () => {
+    router.push("/continent");
   }
 
   return (
@@ -76,7 +75,7 @@ export function ContinentSlide() {
         <SwiperSlide key={continent.name}>
           <Box
             sx={boxParams(continent.img)}
-            onClick={() => sendContinent(continent.name, continent.img)}
+            onClick={() => sendContinent()}
           >
             <Text fontSize="36">{continent.name}</Text>
           </Box>
