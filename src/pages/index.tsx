@@ -9,13 +9,13 @@ const Home: NextPage = () => {
     <VStack w="100%" spacing="5">
       <Banner />
       <TravelTypes />
-      <Center
-        w="80px"
-        h="2px"
-        bg="black"
-      />
-      <Text fontSize="36">Vamos nessa?</Text>
-      <Text fontSize="36">Então escolha seu continente</Text>
+      <Center w="80px" h="2px" bg="black" />
+      <Text fontSize={["2xl", "3xl", "4xl"]} textAlign="center">
+        Vamos nessa?
+      </Text>
+      <Text fontSize={["2xl", "3xl", "4xl"]} textAlign="center">
+        Então escolha seu continente
+      </Text>
       <ContinentSlide />
     </VStack>
   );

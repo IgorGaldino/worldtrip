@@ -7,7 +7,7 @@ export default function Continent() {
   return (
     <VStack
       w="100%"
-      h="max-content"
+      h="max"
       gap="2rem"
       bgColor="light"
     >

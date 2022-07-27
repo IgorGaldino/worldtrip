@@ -55,7 +55,6 @@ export function ContinentSlide() {
     textAlign: "center",
     color: "white",
     fontWeight: "bold",
-    fontSize: "20px",
     cursor: "pointer",
     px: 4,
     background: `url(${img}) center/cover no-repeat`,
@@ -77,7 +76,7 @@ export function ContinentSlide() {
             sx={boxParams(continent.img)}
             onClick={() => sendContinent()}
           >
-            <Text fontSize="36">{continent.name}</Text>
+            <Text fontSize={["2xl", "3xl", "4xl"]}>{continent.name}</Text>
           </Box>
         </SwiperSlide>
       ))}

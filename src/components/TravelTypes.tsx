@@ -1,7 +1,11 @@
-import { Flex, Image, Text } from '@chakra-ui/react'
+import { Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
 
 export function TravelTypes() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true
+  });
 
   const types = [
     { label: "vida noturna", icon: "/imgs/cocktail.svg" },
@@ -15,15 +19,20 @@ export function TravelTypes() {
     <Flex
       w="100%"
       justify="space-evenly"
+      wrap="wrap"
     >
       {types.map(type => (
         <Flex
           key={type.label}
-          direction="column"
+          direction={isWideVersion ? "column" : "row"}
           alignItems="center"
           gap="5"
         >
-          <Image src={type.icon} alt={type.label} />
+          {isWideVersion ? (
+            <Image src={type.icon} alt={type.label} />
+          ) : (
+            <Image src="/imgs/dot.svg" alt="dot" />
+          )}
           <Text
             fontWeight="600"
           >
